@@ -54,7 +54,7 @@ function TodoList() {
   return (
     <div className={`todolist h-screen ${theme === 'dark' ? 'bg-[#171823]' : 'bg-[#fff]'}`}>
       <div className={`min-w-[325px] md:min-w-[1340px] h-[300px] md:h-[960px] ${theme === 'dark' ? 'darkbg' : 'lightbg'}`}>
-        <div className='absolute w-[360px] md:w-full h-[300px] top-0 left-0 bg-[#4B0082] bg-opacity-60'>
+        <div className='absolute w-[360px] md:w-full h-[282px] top-0 left-0 bg-[#4B0082] bg-opacity-60'>
           <div className='w-[325px] md:w-[540px] mx-[4%] md:mx-[30%]'>
             <div className='flex mt-12 justify-between'>
               <h2 className='font-bold text-[40px] text-white tracking-[15px]'>TODO</h2>
@@ -158,7 +158,7 @@ function TodoList() {
                 }}
                 className={activeFilter === 'complete' ? 'text-[#3A7CFD]' : ''}
               >
-                Complete
+                Completed
               </button>
               <button onClick={clearCompleted}>Clear Completed</button>
             </div>
@@ -196,7 +196,7 @@ function TodoList() {
                   }}
                   className={activeFilter === 'complete' ? 'text-[#3A7CFD]' : ''}
                 >
-                  Complete
+                  Completed
                 </button>
               
           </div>
