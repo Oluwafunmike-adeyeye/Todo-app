@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BsFillMoonFill, BsFillSunFill } from 'react-icons/bs';
-
+import { LiaTimesSolid } from 'react-icons/lia';
 
 function TodoList() {
   const [theme, setTheme] = useState('dark');
@@ -8,7 +8,7 @@ function TodoList() {
   const [newTodo, setNewTodo] = useState('');
   const [filter, setFilter] = useState('all');
   const [activeFilter, setActiveFilter] = useState('all');
-  const [showDeleteButton, setShowDeleteButton] = useState(-1);
+  
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -104,23 +104,21 @@ function TodoList() {
                     <div
                       style={{
                         textDecoration: todo.completed ? 'line-through' : 'none',
-                        marginLeft: '16px', 
-                        marginRight: '30px',
+                        marginLeft: '16px',
+                        marginRight: '30px',      
                       }}
-                      className='todo-text cursor-pointer'
-                      onClick={() => setShowDeleteButton(index)}
+                      className='flex cursor-pointer'
                     >
                       {todo.text}
                     </div>
-                    <div className="delete-container" style={{ display: showDeleteButton === index ? 'block' : 'none' }}> 
-                      <button
+                    <div className="delete-container"> 
+                      <LiaTimesSolid size={22}
                         onClick={() => deleteTodo(index)}
                         className={`${
                           theme === 'dark' ? 'text-[#C8CBE7]' : 'text-[#494C6B]'
-                        } text-[18px] cursor-pointer`}
-                      >
-                        X
-                      </button>
+                        } text-[16px] cursor-pointer flex-1`}
+                      />
+                      
                     </div>
                   </div>
 
