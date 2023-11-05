@@ -52,10 +52,10 @@ function TodoList() {
   };
 
   return (
-    <div className={`todolist ${theme === 'dark' ? 'bg-[#171823]' : 'bg-[#fff]'}`}>
-      <div className={`text-center w-[1340px] h-[960px] ${theme === 'dark' ? 'darkbg' : 'lightbg'}`}>
-        <div className='absolute w-[395px] md:w-full h-[280px] top-0 left-0 bg-[#4B0082] bg-opacity-60'>
-          <div className='w-[325px] md:w-[540px] mx-[7%] md:mx-[30%]'>
+    <div className={`todolist h-screen ${theme === 'dark' ? 'bg-[#171823]' : 'bg-[#fff]'}`}>
+      <div className={`min-w-[325px] md:min-w-[1340px] h-[300px] md:h-[960px] ${theme === 'dark' ? 'darkbg' : 'lightbg'}`}>
+        <div className='absolute w-[360px] md:w-full h-[300px] top-0 left-0 bg-[#4B0082] bg-opacity-60'>
+          <div className='w-[325px] md:w-[540px] mx-[4%] md:mx-[30%]'>
             <div className='flex mt-12 justify-between'>
               <h2 className='font-bold text-[40px] text-white tracking-[15px]'>TODO</h2>
               <button onClick={toggleTheme} className='text-white'>
@@ -76,7 +76,7 @@ function TodoList() {
               <button type="submit" style={{ display: 'none' }}></button>
             </form>
           </div>
-          <div className='w-[325px] md:w-[540px] mx-[7%] md:mx-[30%] mt-8 pt-2'>
+          <div className='w-[325px] md:w-[540px] mx-[4%] md:mx-[30%] mt-8 pt-2'>
           <ul className={`${theme === 'dark' ? 'bg-[#25273D] text-[#C8CBE7] dark' : 'bg-[#fff] text-[#494C6B]'}`}>
               {filteredTodos.map((todo, index) => (
                 <li key={index} className={`flex py-4 ${theme === 'dark' ? 'text-[#C8CBE7]' : 'text-[#494C6B]'} text-[18px]`} style={{
@@ -128,7 +128,7 @@ function TodoList() {
               ))}
             </ul>
           </div>
-          <div className={`hidden md:flex justify-between w-[325px] md:w-[540px] mx-[7%] md:mx-[30%] p-4 ${theme === 'dark' ? 'bg-[#25273D] text-[#5B5E7E]' : 'bg-[#fff] text-[#9495A5]'} text-[14px] font-bold`}>
+          <div className={`hidden md:flex justify-between w-[325px] md:w-[540px] mx-[4%] md:mx-[30%] p-4 ${theme === 'dark' ? 'bg-[#25273D] text-[#5B5E7E]' : 'bg-[#fff] text-[#9495A5]'} text-[14px] font-bold`}>
             <div>
               <span>{incompleteTodosCount} item{incompleteTodosCount !== 1 ? 's' : ''} left</span>
             </div>
@@ -164,13 +164,13 @@ function TodoList() {
             </div>
           </div>
 
-          <div className={`md:hidden justify-between w-[325px] md:w-[540px] mx-[7%] md:mx-[30%] p-4 ${theme === 'dark' ? 'bg-[#25273D] text-[#5B5E7E]' : 'bg-[#fff] text-[#9495A5]'} text-[14px] font-bold`}>
+          <div className={`md:hidden justify-between w-[325px] md:w-[540px] mx-[4%] md:mx-[30%] p-4 ${theme === 'dark' ? 'bg-[#25273D] text-[#5B5E7E]' : 'bg-[#fff] text-[#9495A5]'} text-[14px] font-bold`}>
               <div className='flex justify-between'>
                 <span>{incompleteTodosCount} item{incompleteTodosCount !== 1 ? 's' : ''} left</span>
                 <button onClick={clearCompleted}>Clear Completed</button>
               </div>
           </div>
-          <div className={`md:hidden mt-4 flex justify-center gap-4 w-[325px] md:w-[540px] mx-[7%] md:mx-[30%] p-4 ${theme === 'dark' ? 'bg-[#25273D] text-[#5B5E7E]' : 'bg-[#fff] text-[#9495A5]'} text-[14px] font-bold`}>
+          <div className={`md:hidden mt-4 flex justify-center gap-4 w-[325px] md:w-[540px] mx-[4%] md:mx-[30%] p-4 ${theme === 'dark' ? 'bg-[#25273D] text-[#5B5E7E]' : 'bg-[#fff] text-[#9495A5]'} text-[14px] font-bold`}>
                 <button
                   onClick={() => {
                     setFilter('all');
