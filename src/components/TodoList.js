@@ -79,7 +79,7 @@ function TodoList() {
           <div className='w-[325px] md:w-[540px] mx-[4%] md:mx-[30%] mt-8 pt-2'>
           <ul className={`${theme === 'dark' ? 'bg-[#25273D] text-[#C8CBE7] dark' : 'bg-[#fff] text-[#494C6B]'}`}>
               {filteredTodos.map((todo, index) => (
-                <li key={index} className={`flex py-4 ${theme === 'dark' ? 'text-[#C8CBE7]' : 'text-[#494C6B]'} text-[18px]`} style={{
+                <li key={index} className={`grid grid-cols-10 gap-1 py-4 ${theme === 'dark' ? 'text-[#C8CBE7]' : 'text-[#494C6B]'} text-[18px]`} style={{
                   borderBottom: `1px solid ${theme === 'dark' ? '#393A4B' : '#E3E4F1'}`,
                 }}>
                   <div className={`circular-checkbox ${theme === 'dark' ? 'dark' : 'light'} ${todo.completed ? 'checked' : ''}`} onClick={() => toggleComplete(index)}>
@@ -91,37 +91,34 @@ function TodoList() {
                       id={`checkbox-${index}`}
                     />
                   </div>
-                  <div className={`flex ${
-                    theme === 'dark'
-                      ? todo.completed
-                        ? 'text-[#4D5067]'
-                        : 'text-[#C8CBE7]'
-                      : todo.completed
-                      ? 'text-[#D1D2DA]'
-                      : 'text-[#494C6B]'
-                    }`}
-                  >
-                    <div
+                  <div className='flex justify-between col-span-9'>
+                    <div className={`cursor-pointer ${
+                      theme === 'dark'
+                        ? todo.completed
+                          ? 'text-[#4D5067]'
+                          : 'text-[#C8CBE7]'
+                        : todo.completed
+                        ? 'text-[#D1D2DA]'
+                        : 'text-[#494C6B]'
+                      }`}
                       style={{
-                        textDecoration: todo.completed ? 'line-through' : 'none',
-                        marginLeft: '16px',
-                        marginRight: '30px',      
+                        textDecoration: todo.completed ? 'line-through' : 'none',     
                       }}
-                      className='flex cursor-pointer'
                     >
                       {todo.text}
                     </div>
-                    <div className="delete-container"> 
-                      <LiaTimesSolid size={22}
-                        onClick={() => deleteTodo(index)}
-                        className={`${
-                          theme === 'dark' ? 'text-[#C8CBE7]' : 'text-[#494C6B]'
-                        } text-[16px] cursor-pointer flex-1`}
-                      />
-                      
-                    </div>
-                  </div>
+                    <div className="delete-container mr-4"> 
+                        <LiaTimesSolid size={22}
+                          onClick={() => deleteTodo(index)}
+                          className={`${
+                            theme === 'dark' ? 'text-[#C8CBE7]' : 'text-[#494C6B]'
+                          } text-[16px] cursor-pointer flex-1`}
+                        />
+                        
+                      </div>
 
+                  </div>
+                  
                 </li>
               ))}
             </ul>
